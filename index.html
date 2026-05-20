@@ -214,11 +214,14 @@ section { padding: 5rem 1.5rem; }
 }
 .btn-outline:hover { background: rgba(34,211,238,0.08); }
 .btn-green {
-  background: linear-gradient(135deg, var(--green), #059669);
+  background: linear-gradient(135deg, #10b981, #059669);
   color: #fff;
-  box-shadow: 0 4px 18px rgba(16,185,129,0.3);
+  box-shadow: 0 4px 22px rgba(16,185,129,0.45);
+  font-size: 0.82rem; font-weight: 700;
+  letter-spacing: 0.08em;
+  padding: 0.85rem 2rem;
 }
-.btn-green:hover { box-shadow: 0 6px 24px rgba(16,185,129,0.45); transform: translateY(-1px); }
+.btn-green:hover { box-shadow: 0 8px 28px rgba(16,185,129,0.6); transform: translateY(-2px); }
 
 /* ─── HERO ─── */
 #hero {
@@ -241,21 +244,30 @@ section { padding: 5rem 1.5rem; }
 
 /* CIRCULAR PHOTO */
 .hero-photo-wrap {
-  display: flex; justify-content: center; flex-shrink: 0;
-  order: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  gap: 0;
 }
-@media (min-width: 900px) { .hero-photo-wrap { order: 0; } }
 
 .photo-circle-outer {
   position: relative;
-  width: min(260px, 70vw);
-  height: min(260px, 70vw);
+  width: 180px;
+  height: 180px;
+}
+@media (min-width: 900px) {
+  .photo-circle-outer {
+    width: 280px;
+    height: 280px;
+  }
 }
 .photo-ring {
-  position: absolute; inset: -6px;
+  position: absolute; inset: -5px;
   border-radius: 50%;
   background: linear-gradient(135deg, var(--cyan), var(--blue), var(--pink));
-  animation: spinRing 6s linear infinite;
+  animation: spinRing 8s linear infinite;
   padding: 3px;
 }
 @keyframes spinRing { to { transform: rotate(360deg); } }
@@ -274,7 +286,8 @@ section { padding: 5rem 1.5rem; }
 .photo-img-circle {
   position: absolute; inset: 4px;
   border-radius: 50%;
-  object-fit: cover; object-position: center top;
+  object-fit: cover;
+  object-position: center 5%;
   z-index: 1;
   filter: brightness(1.06) contrast(1.05) saturate(1.08);
 }
@@ -696,6 +709,20 @@ footer {
 #topbtn.show { opacity: 1; pointer-events: all; }
 #topbtn:hover { transform: translateY(-2px); }
 #topbtn svg { width: 17px; height: 17px; fill: #060e1f; }
+
+.hero-avail-badge {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  margin-top: 1rem;
+  padding: 0.55rem 1.4rem;
+  background: rgba(16,185,129,0.15);
+  border: 1.5px solid rgba(16,185,129,0.55);
+  border-radius: 30px;
+  font-size: 0.72rem; font-weight: 700;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  color: #10b981;
+  box-shadow: 0 0 20px rgba(16,185,129,0.2);
+  white-space: nowrap;
+}
   </style>
 </head>
 <body>
@@ -747,17 +774,22 @@ footer {
     <div class="photo-circle-outer">
       <div class="photo-glow-outer"></div>
       <div class="photo-ring"><div class="photo-ring-inner"></div></div>
-      <img class="photo-img-circle" src="photo.png" alt="Nyoh Leonard Kanyi" loading="eager"/>
+      <img class="photo-img-circle" src="photo.png" alt="Nyoh Leonard Kanyi" loading="lazy"/>
+    </div>
+    <div class="hero-avail-badge">
+      <span class="pulse"></span>
+      
     </div>
   </div>
-
-  <!-- text -->
-  <div class="hero-text">
-    <div class="available-badge">
+<div class="hero-avail-badge">
       <span class="pulse"></span>
       Available for Hire — Worldwide
     </div>
-    <p class="hero-hello">Hello, I'm</p>
+  </div>
+  <!-- text -->
+  <div class="hero-text">
+    
+<p class="hero-hello">Hello, I'm</p>
     <h1 class="hero-name">Nyoh Leonard Kanyi</h1>
     <p class="hero-role">And I'm a <span id="typed"></span><span class="cursor">|</span></p>
 
@@ -792,7 +824,18 @@ footer {
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
         View Portfolio
       </a>
+      <a href="mailto:nyohleonard16@gmail.com" class="btn btn-green">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        💼 Hire Me Now
+      </a>
       <a href="#contact" class="btn btn-outline">Contact Me</a>
+    </div>
+    <div style="background:linear-gradient(135deg,rgba(16,185,129,0.12),rgba(34,211,238,0.08));border:1px solid rgba(16,185,129,0.35);border-radius:10px;padding:1rem 1.25rem;display:flex;align-items:center;gap:0.75rem;margin-top:0.25rem;">
+      <span style="font-size:1.4rem;flex-shrink:0;">💼</span>
+      <div>
+        <div style="font-size:0.82rem;font-weight:700;color:#f8fafc;margin-bottom:0.2rem;">Open for Remote Work &amp; Freelance</div>
+        <div style="font-size:0.73rem;color:#94a3b8;line-height:1.5;">AI · Full-Stack · Automation · Anywhere in the world</div>
+      </div>
     </div>
   </div>
 
@@ -823,23 +866,7 @@ footer {
   <div class="label">Who I Am</div>
   <h2 class="title fade">About Me</h2>
   <div class="about-grid">
-    <div class="about-photo fade">
-      <div class="about-photo-inner">
-        <img src="photo2.png" alt="Nyoh Leonard Kanyi — GOOGLE DEVELOPER BUILTDATHON" loading="lazy"/>
-      </div>
-      <div class="about-photo-caption">
-        <span class="caption-dot"></span>
-        GDG &amp; Academic Workshop — Bamenda
-        
-      </div>
-    </div>
-<p>True engineering is not just about writing syntax; it is about decomposing complex, real-world problems into optimized, scalable subsystems. Whether designing a robust full-stack architecture, optimizing a machine learning pipeline, or building low-latency cyber-physical integrations, the core principle remains the same: mastery over the foundational layers.
 
-This capture is from a recent Google Developer Groups (GDG) session, where the focus extended beyond high-level abstractions to deep, hands-on implementation. For me, these ecosystem events serve a dual purpose: validating architectural patterns against industry standards and collaborating with peer engineers to drive localized technological impact.
-
-The goal is clear: to relentlessly push the boundaries of software and hardware engineering, building deterministic, high-performance systems that solve critical infrastructure and computational challenges.
-
-Stay tuned as I document the underlying source code, design bottlenecks, and architectural breakdowns of my current builds right here on this platform.</p>
     <div class="about-photo fade">
       <div class="about-photo-inner">
         <img src="portrait.jpg" alt="Nyoh Leonard Kanyi — Cultural Workshop" loading="lazy"/>
