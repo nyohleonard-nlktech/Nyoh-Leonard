@@ -18,8 +18,8 @@
   --surface-solid:#161b22;
   --line: rgba(255,255,255,0.08);
   --line-strong: rgba(255,255,255,0.14);
-  --accent:#38bdf8;
-  --accent-2:#818cf8;
+  --accent:#37D6B0;
+  --accent-2:#E2A63B;
   --border-glow: rgba(56,189,248,0.15);
   --text:#f0f6fc;
   --muted:#8b949e;
@@ -149,10 +149,22 @@ nav a:hover, nav a:focus-visible{ color:var(--text); }
 .stat .label{ font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--muted); text-transform:uppercase; letter-spacing:.05em; margin-top:2px; }
 
 /* ---------- LIVE TERMINAL WIDGET ---------- */
-.terminal-wrap{ position:relative; }
+.terminal-wrap{ position:relative; padding-top:50px; }
+.terminal-photo-float{
+  position:absolute; top:0; left:50%; transform:translateX(-50%); z-index:3;
+  width:110px; height:110px; border-radius:50%; overflow:hidden;
+  box-shadow:0 0 0 4px var(--bg), 0 0 0 6px var(--line-strong), 0 20px 40px -10px rgba(0,0,0,0.6);
+}
+.terminal-photo-float::before{
+  content:''; position:absolute; inset:-8px; border-radius:50%;
+  background:conic-gradient(from 0deg, var(--accent), var(--accent-2), var(--accent));
+  z-index:-1; animation:spin 10s linear infinite;
+}
+@keyframes spin{ to{ transform:rotate(360deg); } }
+.terminal-photo-float img{ width:100%; height:100%; object-fit:cover; object-position:center 20%; }
 .terminal-card{
   background:var(--surface); backdrop-filter:blur(16px); -webkit-backdrop-filter:blur(16px);
-  border:1px solid var(--line-strong); border-radius:14px; overflow:hidden;
+  border:1px solid var(--line-strong); border-radius:14px; overflow:hidden; margin-top:36px;
   box-shadow:0 30px 70px -30px rgba(0,0,0,0.7);
 }
 .terminal-topbar{
@@ -174,9 +186,7 @@ nav a:hover, nav a:focus-visible{ color:var(--text); }
 @keyframes fadeInLine{ to{ opacity:1; } }
 .cursor-blink{ display:inline-block; width:8px; height:14px; background:var(--accent); animation:blink 1s step-end infinite; vertical-align:middle; }
 @keyframes blink{ 50%{ opacity:0; } }
-.terminal-photo-row{ display:flex; align-items:center; gap:14px; padding:16px 20px; border-top:1px solid var(--line); background:rgba(255,255,255,0.015); }
-.terminal-photo{ width:46px; height:46px; border-radius:10px; overflow:hidden; border:1px solid var(--line-strong); flex-shrink:0; }
-.terminal-photo img{ width:100%; height:100%; object-fit:cover; object-position:center 20%; }
+.terminal-photo-row{ display:flex; align-items:center; justify-content:center; gap:14px; padding:16px 20px; border-top:1px solid var(--line); background:rgba(255,255,255,0.015); }
 .terminal-photo-row .name{ font-family:'Space Grotesk',sans-serif; font-size:14px; font-weight:600; }
 .terminal-photo-row .role{ font-family:'JetBrains Mono',monospace; font-size:11.5px; color:var(--muted); }
 
@@ -380,6 +390,7 @@ footer{ border-top:1px solid var(--line); padding:36px 0; }
     </div>
 
     <div class="terminal-wrap">
+      <div class="terminal-photo-float"><img src="assets/nlk-photo.jpg" alt="Nyoh Leonard Kanyi"></div>
       <div class="terminal-card">
         <div class="terminal-topbar">
           <span class="tdot r"></span><span class="tdot y"></span><span class="tdot g"></span>
@@ -387,10 +398,9 @@ footer{ border-top:1px solid var(--line); padding:36px 0; }
         </div>
         <div class="terminal-body" id="terminalBody"></div>
         <div class="terminal-photo-row">
-          <div class="terminal-photo"><img src="assets/nlk-photo.jpg" alt="Nyoh Leonard Kanyi"></div>
           <div>
-            <div class="name">Nyoh Leonard Kanyi</div>
-            <div class="role">AI/ML &amp; Backend Systems Engineer</div>
+            <div class="name" style="text-align:center;">Nyoh Leonard Kanyi</div>
+            <div class="role" style="text-align:center;">AI/ML &amp; Backend Systems Engineer</div>
           </div>
         </div>
       </div>
