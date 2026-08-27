@@ -161,7 +161,7 @@ nav a:hover, nav a:focus-visible{ color:var(--text); }
   z-index:-1; animation:spin 10s linear infinite;
 }
 @keyframes spin{ to{ transform:rotate(360deg); } }
-.terminal-photo-float img{ width:100%; height:100%; object-fit:cover; object-position:center 20%; }
+.terminal-photo-float img{ width:100%; height:100%; object-fit:cover; object-position:center 12%; transform:scale(1.15); }
 .terminal-card{
   background:var(--surface); backdrop-filter:blur(16px); -webkit-backdrop-filter:blur(16px);
   border:1px solid var(--line-strong); border-radius:14px; overflow:hidden; margin-top:36px;
@@ -348,8 +348,8 @@ footer{ border-top:1px solid var(--line); padding:36px 0; }
       <ul>
         <li><a href="#about">About</a></li>
         <li><a href="#skills">Skills</a></li>
-        <li><a href="#lab">AI/ML Lab</a></li>
         <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#lab">AI/ML Lab</a></li>
         <li><a href="#journey">Journey</a></li>
       </ul>
     </nav>
@@ -362,8 +362,8 @@ footer{ border-top:1px solid var(--line); padding:36px 0; }
 <nav class="mobile-panel" id="mobilePanel" aria-label="Mobile navigation">
   <a href="#about">About</a>
   <a href="#skills">Skills</a>
-  <a href="#lab">AI/ML Lab</a>
   <a href="#portfolio">Portfolio</a>
+  <a href="#lab">AI/ML Lab</a>
   <a href="#journey">Journey</a>
   <a href="mailto:nyohleonard16@gmail.com" class="nav-cta" style="text-align:center;">Get in Touch →</a>
 </nav>
@@ -487,78 +487,6 @@ footer{ border-top:1px solid var(--line); padding:36px 0; }
         <p>Turning raw institutional data into dashboards that support real decisions.</p>
         <div class="tag-row"><span class="tag"><span class="tag-dot data"></span>Pandas</span><span class="tag"><span class="tag-dot data"></span>Streamlit</span><span class="tag"><span class="tag-dot data"></span>Matplotlib</span></div>
       </div>
-    </div>
-  </div>
-</section>
-
-<section id="lab" style="background:rgba(255,255,255,0.015);">
-  <div class="wrap">
-    <div class="eyebrow">Applied Research</div>
-    <h2 class="h2">AI/ML Lab</h2>
-    <p class="lead">Vector search, recommendation, classification, and information-integrity systems — the applied ML work behind the product engineering.</p>
-    <div class="bento-grid" id="labGrid">
-
-      <div class="bento-card lg">
-        <div class="bento-media"><img src="assets/projects/pgvector-engine.png" alt="pgvector Product Search interface" loading="lazy"></div>
-        <div class="bento-body">
-          <h3>pgvector Product Search</h3>
-          <p>Full-stack AI product recommendation and similarity search engine using sentence-transformer embeddings stored and queried through Postgres.</p>
-          <div class="tag-row" style="margin-bottom:14px;">
-            <span class="tag"><span class="tag-dot ai"></span>FastAPI</span><span class="tag"><span class="tag-dot ai"></span>pgvector</span><span class="tag"><span class="tag-dot ai"></span>Sentence-Transformers</span>
-          </div>
-          <div class="bento-links"><a href="https://pgvectorsearch.streamlit.app/">Live Demo ↗</a></div>
-        </div>
-      </div>
-
-      <div class="bento-card">
-        <div class="bento-media"><img src="assets/projects/faiss-engine.png" alt="FAISS Vector Engine interface" loading="lazy"></div>
-        <div class="bento-body">
-          <h3>FAISS Vector Engine</h3>
-          <p>Category-partitioned similarity search using in-memory ANN indexing with Z-score standardization.</p>
-          <div class="tag-row" style="margin-bottom:14px;"><span class="tag"><span class="tag-dot ai"></span>FAISS</span><span class="tag"><span class="tag-dot ai"></span>Scikit-learn</span></div>
-          <div class="bento-links"><a href="https://faiss-vector-ecommerce.streamlit.app/">Live Demo ↗</a></div>
-        </div>
-      </div>
-
-      <div class="bento-card">
-        <div class="bento-media"><img src="assets/projects/name-classifier.png" alt="Name Entity Classifier interface" loading="lazy"></div>
-        <div class="bento-body">
-          <h3>Name Entity Classifier</h3>
-          <p>Classifies single-word names into Male / Female / Animal / Country — LogReg vs. LSTM.</p>
-          <div class="tag-row" style="margin-bottom:14px;"><span class="tag"><span class="tag-dot ai"></span>Python</span><span class="tag"><span class="tag-dot ai"></span>LSTM</span></div>
-          <div class="bento-links"><a href="https://ml-name-classifier.streamlit.app/">Live Demo ↗</a></div>
-        </div>
-      </div>
-
-      <div class="bento-card">
-        <div class="bento-media"><img src="assets/projects/real-estate.png" alt="AI Real Estate Advisor interface" loading="lazy"></div>
-        <div class="bento-body">
-          <h3>AI Real Estate Advisor</h3>
-          <p>Content-based property recommender with hierarchical state-level fallback for sparse markets.</p>
-          <div class="tag-row" style="margin-bottom:14px;"><span class="tag"><span class="tag-dot ai"></span>Python</span><span class="tag"><span class="tag-dot ai"></span>Scikit-learn</span></div>
-          <div class="bento-links"><a href="https://realestate-sepia-mu.vercel.app/">Live Demo ↗</a></div>
-        </div>
-      </div>
-
-      <div class="bento-card">
-        <div class="bento-media svg-placeholder">
-          <svg width="120" height="80" viewBox="0 0 120 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect x="4" y="4" width="112" height="72" rx="8" stroke="#818cf8" stroke-width="2" opacity="0.5"/>
-            <circle cx="16" cy="16" r="2.5" fill="#f59e0b"/><circle cx="24" cy="16" r="2.5" fill="#818cf8"/><circle cx="32" cy="16" r="2.5" fill="#38bdf8"/>
-            <line x1="14" y1="30" x2="70" y2="30" stroke="#38bdf8" stroke-width="2" opacity="0.6"/>
-            <line x1="14" y1="40" x2="90" y2="40" stroke="#818cf8" stroke-width="2" opacity="0.5"/>
-            <line x1="14" y1="50" x2="55" y2="50" stroke="#38bdf8" stroke-width="2" opacity="0.4"/>
-            <line x1="14" y1="60" x2="75" y2="60" stroke="#818cf8" stroke-width="2" opacity="0.3"/>
-          </svg>
-        </div>
-        <div class="bento-body">
-          <h3>TruthLens</h3>
-          <p>Checks images, text, and video for AI-generation or manipulation, explains its reasoning, and returns a trust index. Built for the UNESCO Youth Hackathon 2026, with a teammate.</p>
-          <div class="tag-row" style="margin-bottom:14px;"><span class="tag"><span class="tag-dot ai"></span>Kotlin</span><span class="tag"><span class="tag-dot ai"></span>NLP</span></div>
-          <div class="bento-links"><span style="color:var(--amber);">In development — UNESCO Hackathon 2026</span></div>
-        </div>
-      </div>
-
     </div>
   </div>
 </section>
@@ -693,6 +621,78 @@ footer{ border-top:1px solid var(--line); padding:36px 0; }
           <p>Desktop geo-data analytics app — enter any country and instantly fetch capital, population, region, and flag via the REST Countries API.</p>
           <div class="tag-row" style="margin-bottom:14px;"><span class="tag"><span class="tag-dot data"></span>Python</span><span class="tag"><span class="tag-dot data"></span>Tkinter</span></div>
           <div class="bento-links"><a href="https://github.com/nyohleonard-nlktech/nlk-project-one">GitHub ↗</a></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="lab" style="background:rgba(255,255,255,0.015);">
+  <div class="wrap">
+    <div class="eyebrow">Applied Research</div>
+    <h2 class="h2">AI/ML Lab</h2>
+    <p class="lead">Vector search, recommendation, classification, and information-integrity systems — the applied ML work behind the product engineering.</p>
+    <div class="bento-grid" id="labGrid">
+
+      <div class="bento-card lg">
+        <div class="bento-media"><img src="assets/projects/pgvector-engine.png" alt="pgvector Product Search interface" loading="lazy"></div>
+        <div class="bento-body">
+          <h3>pgvector Product Search</h3>
+          <p>Full-stack AI product recommendation and similarity search engine using sentence-transformer embeddings stored and queried through Postgres.</p>
+          <div class="tag-row" style="margin-bottom:14px;">
+            <span class="tag"><span class="tag-dot ai"></span>FastAPI</span><span class="tag"><span class="tag-dot ai"></span>pgvector</span><span class="tag"><span class="tag-dot ai"></span>Sentence-Transformers</span>
+          </div>
+          <div class="bento-links"><a href="https://pgvectorsearch.streamlit.app/">Live Demo ↗</a></div>
+        </div>
+      </div>
+
+      <div class="bento-card">
+        <div class="bento-media"><img src="assets/projects/faiss-engine.png" alt="FAISS Vector Engine interface" loading="lazy"></div>
+        <div class="bento-body">
+          <h3>FAISS Vector Engine</h3>
+          <p>Category-partitioned similarity search using in-memory ANN indexing with Z-score standardization.</p>
+          <div class="tag-row" style="margin-bottom:14px;"><span class="tag"><span class="tag-dot ai"></span>FAISS</span><span class="tag"><span class="tag-dot ai"></span>Scikit-learn</span></div>
+          <div class="bento-links"><a href="https://faiss-vector-ecommerce.streamlit.app/">Live Demo ↗</a></div>
+        </div>
+      </div>
+
+      <div class="bento-card">
+        <div class="bento-media"><img src="assets/projects/name-classifier.png" alt="Name Entity Classifier interface" loading="lazy"></div>
+        <div class="bento-body">
+          <h3>Name Entity Classifier</h3>
+          <p>Classifies single-word names into Male / Female / Animal / Country — LogReg vs. LSTM.</p>
+          <div class="tag-row" style="margin-bottom:14px;"><span class="tag"><span class="tag-dot ai"></span>Python</span><span class="tag"><span class="tag-dot ai"></span>LSTM</span></div>
+          <div class="bento-links"><a href="https://ml-name-classifier.streamlit.app/">Live Demo ↗</a></div>
+        </div>
+      </div>
+
+      <div class="bento-card">
+        <div class="bento-media"><img src="assets/projects/real-estate.png" alt="AI Real Estate Advisor interface" loading="lazy"></div>
+        <div class="bento-body">
+          <h3>AI Real Estate Advisor</h3>
+          <p>Content-based property recommender with hierarchical state-level fallback for sparse markets.</p>
+          <div class="tag-row" style="margin-bottom:14px;"><span class="tag"><span class="tag-dot ai"></span>Python</span><span class="tag"><span class="tag-dot ai"></span>Scikit-learn</span></div>
+          <div class="bento-links"><a href="https://realestate-sepia-mu.vercel.app/">Live Demo ↗</a></div>
+        </div>
+      </div>
+
+      <div class="bento-card">
+        <div class="bento-media svg-placeholder">
+          <svg width="120" height="80" viewBox="0 0 120 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="4" y="4" width="112" height="72" rx="8" stroke="#818cf8" stroke-width="2" opacity="0.5"/>
+            <circle cx="16" cy="16" r="2.5" fill="#f59e0b"/><circle cx="24" cy="16" r="2.5" fill="#818cf8"/><circle cx="32" cy="16" r="2.5" fill="#38bdf8"/>
+            <line x1="14" y1="30" x2="70" y2="30" stroke="#38bdf8" stroke-width="2" opacity="0.6"/>
+            <line x1="14" y1="40" x2="90" y2="40" stroke="#818cf8" stroke-width="2" opacity="0.5"/>
+            <line x1="14" y1="50" x2="55" y2="50" stroke="#38bdf8" stroke-width="2" opacity="0.4"/>
+            <line x1="14" y1="60" x2="75" y2="60" stroke="#818cf8" stroke-width="2" opacity="0.3"/>
+          </svg>
+        </div>
+        <div class="bento-body">
+          <h3>TruthLens</h3>
+          <p>Checks images, text, and video for AI-generation or manipulation, explains its reasoning, and returns a trust index. Built for the UNESCO Youth Hackathon 2026, with a teammate.</p>
+          <div class="tag-row" style="margin-bottom:14px;"><span class="tag"><span class="tag-dot ai"></span>Kotlin</span><span class="tag"><span class="tag-dot ai"></span>NLP</span></div>
+          <div class="bento-links"><span style="color:var(--amber);">In development — UNESCO Hackathon 2026</span></div>
         </div>
       </div>
 
